@@ -1,0 +1,48 @@
+//第一种方法：递归法
+#include <stdio.h>
+int reverse_string(char * string)
+{
+ if (*string != '\0')
+ {
+     reverse_string(string+1);
+     printf("%c", *string);
+ }
+}
+int main()
+{
+ char *string = "abcde";
+ printf("源字符串为：%s\n", string);
+ printf("反向排列后为：");
+ reverse_string(string);
+ printf("\n");
+ return 0;
+}
+  
+//第二种方法：
+#include <stdio.h>
+#include <assert.h>
+#include<string.h>
+char *reverse(char *str,int len)
+{
+ int i = 0;
+ char *start = str;
+ char *end = str + len - 1;
+ char tmp ;
+ assert(str);
+ while (start < end)
+ {
+  tmp = *start;
+  *start = *end;
+  *end = tmp;
+  start++;
+  end--;
+ }
+   
+ return str;
+}
+int main()
+{
+ char p[] = "abcdef";
+ int len = strlen(p);
+    printf("%s\n", reverse(p,len));
+ return 0;
