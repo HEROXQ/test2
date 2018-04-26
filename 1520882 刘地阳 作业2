@@ -42,7 +42,7 @@ char *reverse(char *str,int len)
 }
 int main()
 {
- char p[] = "abcdef";
+ char p[] = "abcde";
  int len = strlen(p);
     printf("%s\n", reverse(p,len));
  return 0;
